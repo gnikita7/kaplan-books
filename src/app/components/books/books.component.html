@@ -1,0 +1,27 @@
+<div>
+  <div class="books-header">
+    <div >
+      <h1>Books</h1>
+    </div>
+    <div class="create-button">
+      <button mat-button color="primary">Create New Book</button>
+    </div>
+  </div>
+  <div class="books-title">
+    <h3>All Books</h3>
+  </div>
+  <div class="container">
+  <div *ngFor="let book of books" class="book-item" >
+    <mat-card class="matCard">
+      <mat-card-header>
+        <mat-card-title>{{ book.volumeInfo.title }} </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ book.volumeInfo.authors[0] }}</p>
+        <p>{{ book.volumeInfo.publisher ?? "NOT Avaliable" }}</p>
+        <p>{{ book.volumeInfo.publishedDate }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  </div>
+</div>
